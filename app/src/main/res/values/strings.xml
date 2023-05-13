@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WildberriesTest</string>
+    <string name="app_name">Пора в путешествие</string>
     <string name="details_title">Данные по перелету</string>
     <string name="error_data"><![CDATA[Получить данные не удалось :(]]></string>
     <string name="like_state">Этот перелёт в избранных</string>
