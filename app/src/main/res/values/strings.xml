@@ -14,4 +14,6 @@
     <string name="arrival_date">Thu, 18 Nov</string>
     <string name="arrival_airport">MOW - Moscow, Russia</string>
     <string name="departure_date">Mon, 15 Nov</string>
+    <string name="error_button_text">Попробовать снова</string>
+    <string name="back_on_list">К списку</string>
 </resources>

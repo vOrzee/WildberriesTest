@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import kotlinx.coroutines.flow.collectLatest
 import ru.vorzee.wildberriestest.R
 import ru.vorzee.wildberriestest.databinding.AirTravelDetailsBinding
@@ -55,6 +57,17 @@ class AirTravelDetails : Fragment() {
                 }
             }
         }
+        binding.backOnList.setOnClickListener {
+            findNavController().navigate(R.id.action_airTravelDetails_to_listOfFlightsFragment)
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().navigate(R.id.action_airTravelDetails_to_listOfFlightsFragment)
+                }
+            }
+        )
         return binding.root
     }
 }

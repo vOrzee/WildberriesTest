@@ -120,5 +120,14 @@
         app:layout_constraintStart_toEndOf="@id/price_flight"
         app:layout_constraintTop_toBottomOf="@id/arrival_details" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src = "@drawable/ic_arrow_back_40"
+        android:id="@+id/back_on_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/back_on_list" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

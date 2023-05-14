@@ -45,7 +45,7 @@ class AirTravelViewModel(application: Application) : AndroidViewModel(applicatio
             }
         }
 
-    private fun loadFlights() = viewModelScope.launch {
+    fun loadFlights() = viewModelScope.launch {
         try {
             _dataState = ListState.Loading
             repository.getAll()

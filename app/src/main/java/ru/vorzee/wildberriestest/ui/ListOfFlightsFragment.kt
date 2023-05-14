@@ -42,19 +42,19 @@ class ListOfFlightsFragment : Fragment() {
                     is ListState.Loading -> {
                         binding.list.isVisible = false
                         binding.progressBar.isVisible = true
-                        binding.errorMessage.isVisible = false
+                        binding.errorGroup.isVisible = false
                     }
 
                     is ListState.Idle -> {
                         binding.list.isVisible = true
                         binding.progressBar.isVisible = false
-                        binding.errorMessage.isVisible = false
+                        binding.errorGroup.isVisible = false
                     }
 
                     is ListState.Error -> {
                         binding.list.isVisible = false
                         binding.progressBar.isVisible = false
-                        binding.errorMessage.isVisible = true
+                        binding.errorGroup.isVisible = true
                     }
                 }
             }
@@ -66,7 +66,11 @@ class ListOfFlightsFragment : Fragment() {
             }
         }
 
-
+        lifecycleScope.launchWhenCreated {
+            binding.reload.setOnClickListener {
+                viewModel.loadFlights()
+            }
+        }
 
         return binding.root
     }
