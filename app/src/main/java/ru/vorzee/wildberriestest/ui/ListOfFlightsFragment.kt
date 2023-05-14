@@ -10,13 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import ru.vorzee.wildberriestest.R
 import ru.vorzee.wildberriestest.adapter.FlightsAdapter
 import ru.vorzee.wildberriestest.databinding.ListOfFlightsFragmentBinding
 import ru.vorzee.wildberriestest.model.ListState
 import ru.vorzee.wildberriestest.viewmodel.AirTravelViewModel
-
+@AndroidEntryPoint
 class ListOfFlightsFragment : Fragment() {
     private lateinit var binding: ListOfFlightsFragmentBinding
     private lateinit var adapter: FlightsAdapter

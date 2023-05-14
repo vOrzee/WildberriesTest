@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_air_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WildberriesTest"
+        android:name=".application.WildBerriesApplication"
         tools:targetApi="33">
         <activity
             android:name=".ui.AppActivity"

@@ -1,24 +1,24 @@
 package ru.vorzee.wildberriestest.viewmodel
 
 import android.app.Application
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import ru.vorzee.wildberriestest.dto.Flight
 import ru.vorzee.wildberriestest.model.ListState
 import ru.vorzee.wildberriestest.repository.AirTravelRepository
-import ru.vorzee.wildberriestest.repository.AirTravelRepositoryImpl
+import javax.inject.Inject
 
-class AirTravelViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val repository: AirTravelRepository = AirTravelRepositoryImpl()
+@HiltViewModel
+class AirTravelViewModel @Inject constructor(
+    application: Application,
+    private val repository: AirTravelRepository,
+) : AndroidViewModel(application) {
 
     private var _data: List<Flight> = listOf()
 

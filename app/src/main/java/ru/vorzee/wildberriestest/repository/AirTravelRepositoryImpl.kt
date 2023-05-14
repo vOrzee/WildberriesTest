@@ -10,8 +10,11 @@ import ru.vorzee.wildberriestest.api.ApiWbTest
 import ru.vorzee.wildberriestest.dto.Flight
 import ru.vorzee.wildberriestest.dto.FlightResponse
 import java.net.SocketTimeoutException
+import javax.inject.Inject
 
-class AirTravelRepositoryImpl : AirTravelRepository {
+class AirTravelRepositoryImpl@Inject constructor(
+    private val apiWbTest: ApiWbTest
+): AirTravelRepository {
 
     private var _data: List<Flight> = listOf()
 
@@ -28,7 +31,7 @@ class AirTravelRepositoryImpl : AirTravelRepository {
     override suspend fun getAll() {
         withContext(Dispatchers.IO) {
             try {
-                val responseJson = ApiWbTest.getListData()
+                val responseJson = apiWbTest.getListData()
                 val responseObject: FlightResponse = gson.fromJson(responseJson, FlightResponse::class.java)
                 _data = responseObject.flights
             } catch (e: SocketTimeoutException) {

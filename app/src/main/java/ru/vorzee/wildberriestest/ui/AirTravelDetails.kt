@@ -9,12 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import ru.vorzee.wildberriestest.R
 import ru.vorzee.wildberriestest.databinding.AirTravelDetailsBinding
 import ru.vorzee.wildberriestest.utils.TransformationData.convertDatePublished
 import ru.vorzee.wildberriestest.viewmodel.AirTravelViewModel
-
+@AndroidEntryPoint
 class AirTravelDetails : Fragment() {
 
     private lateinit var binding: AirTravelDetailsBinding
